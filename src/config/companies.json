@@ -1,0 +1,12 @@
+{
+    "portals": [
+        {
+            "url": "http://www.nintendolife.com/feeds/news",
+            "eventName": "nintendo"
+        },
+        {
+            "url": "https://www.pushsquare.com/feeds/latest",
+            "eventName": "playstation"
+        }
+    ]
+}
