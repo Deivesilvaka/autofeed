@@ -4,13 +4,12 @@ import events from './config/events.json' assert { type: 'json' }
 import sentenceBoundaryDetection  from 'sbd'
 import keyword_extractor  from 'keyword-extractor'
 import Instagram from './instagram/instagram.mjs'
-import download from 'image-downloader'
 
 export default class Autofeed {
     constructor(lang = 'en') {
         this.feeder = new RssFeedEmitter()
         this.feeder.add(...companies.portals)
-        this.canStart = true
+        this.canStart = false
         this.lang = lang
         this.instagram
 

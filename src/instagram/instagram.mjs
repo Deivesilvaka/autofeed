@@ -1,21 +1,32 @@
 import 'dotenv/config'
-import Instagram from 'instagram-web-api'
-import FileCookieStore from 'tough-cookie-filestore2'
+import Instagram from 'instagram-publisher'
+import download from 'image-downloader'
+import { join } from 'path'
 
-const { username, password } = process.env
-const cookieStore = new FileCookieStore('./cookies.json')
+const { INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD } = process.env
 
 export default class Intagram {
     constructor() {
-        this.client = new Instagram({ username, password, cookieStore })
+        this.client = undefined
     }
 
     async login() {
-        await this.client.login()
+        this.client = new Instagram({ email: INSTAGRAM_USERNAME, password: INSTAGRAM_PASSWORD, verbose: true })
     }
 
     async uploadPost({ post, image }) {
-        const { media } = await this.client.uploadPhoto({ photo: image, caption: post, post: 'feed' })
-        return media
+        const imageDest = join(process.cwd(), 'src', 'imgs', 'photo.jpg')
+        await download.image({
+            url: image,
+            dest: imageDest
+        })
+        
+        const post_published = await this.client.createSingleImage({
+            image_path: imageDest,
+            caption: post
+        })
+
+
+        return post_published
     }
 }
