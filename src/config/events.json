@@ -2,5 +2,9 @@
     "events": [
         "nintendo",
         "playstation"
-    ]
+    ],
+    "sites": {
+        "nintendo": "Nintendo Life",
+        "playstation": "Pushsquare"
+    }
 }

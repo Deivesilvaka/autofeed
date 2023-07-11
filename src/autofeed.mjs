@@ -25,7 +25,7 @@ export default class Autofeed {
             this.feeder.on(event, async (item) => {
                 if(this.canStart) {
                     try {
-                        await this.publishContent(item)
+                        await this.publishContent(item, event)
                     }catch(err) {
                         console.log(err)
                     }
@@ -45,7 +45,7 @@ export default class Autofeed {
         return this
     }
 
-    async publishContent(content) {
+    async publishContent(content, source) {
         const { title, summary, link } = content
         const { url: imageUrl } = content.enclosures[0]
 
@@ -61,7 +61,7 @@ export default class Autofeed {
             keywords
         }
 
-        const post = this.formatPost(news)
+        const post = this.formatPost(news, source)
         await this.instagram.uploadPost({
             post,
             image: imageUrl
@@ -70,11 +70,11 @@ export default class Autofeed {
         return post
     }
 
-    formatPost(content) {
+    formatPost(content, source) {
         let post = `${content.title}\n\n\n`
         post += `${content.sentences.join('\n\n')}\n\n`
 
-        post += `Source: ${content.link}\n\n`
+        post += `Source: ${events.sites[source]}\n\n`
 
         content.keywords.map((word, index) => {
             if (index < 15) {
