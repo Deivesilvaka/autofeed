@@ -2,6 +2,9 @@ import 'dotenv/config'
 import Instagram from 'instagram-publisher'
 import download from 'image-downloader'
 import { join } from 'path'
+import fs from 'fs'
+import { promisify } from 'util'
+const unlink = promisify(fs.unlink)
 
 const { INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD } = process.env
 
@@ -26,6 +29,7 @@ export default class Intagram {
             caption: post
         })
 
+        await unlink(imageDest)
 
         return post_published
     }
