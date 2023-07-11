@@ -76,8 +76,10 @@ export default class Autofeed {
 
         post += `Source: ${content.link}\n\n`
 
-        content.keywords.map(word => {
-            post += `#${word} `
+        content.keywords.map((word, index) => {
+            if (index < 15) {
+                post += `#${word} `
+            }
         })
 
         return post
