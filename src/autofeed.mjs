@@ -24,7 +24,11 @@ export default class Autofeed {
         events.events.map(event => {
             this.feeder.on(event, async (item) => {
                 if(this.canStart) {
-                    await this.publishContent(item)
+                    try {
+                        await this.publishContent(item)
+                    }catch(err) {
+                        console.log(err)
+                    }
                 }
             })
         })
