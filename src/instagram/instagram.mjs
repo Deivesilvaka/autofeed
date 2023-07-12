@@ -2,9 +2,7 @@ import 'dotenv/config'
 import InstagramPublisher from 'instagram-publisher'
 import download from 'image-downloader'
 import { join } from 'path'
-import fs from 'fs'
-import { promisify } from 'util'
-const unlink = promisify(fs.unlink)
+import { unlink } from 'fs/promises'
 
 const { INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD } = process.env
 
