@@ -16,19 +16,28 @@ export default class Instagram {
     }
 
     async uploadPost({ post, image }) {
-        const imageDest = join(process.cwd(), 'src', 'imgs', 'photo.jpg')
+        const imageDest = join(process.cwd(), 'src', 'imgs', `image${Math.random()}.jpg`)
         await download.image({
             url: image,
             dest: imageDest
         })
         
-        const post_published = await this.client.createSingleImage({
-            image_path: imageDest,
-            caption: post
-        })
+        try{
+            const post_published = await this.client.createSingleImage({
+                image_path: imageDest,
+                caption: post
+            })
+            
+            await unlink(imageDest)
+            
+            return post_published
 
-        await unlink(imageDest)
+        }catch(err) {
+            console.log(err)
+            await unlink(imageDest)
+        }
 
-        return post_published
+        return "published!"
+
     }
 }

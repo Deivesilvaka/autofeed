@@ -25,7 +25,9 @@ export default class Autofeed {
             this.feeder.on(event, async (item) => {
                 if(this.canStart) {
                     try {
-                        await this.publishContent(item, event)
+                        setTimeout(async() => {
+                            await this.publishContent(item, event)
+                        }, 10000 + (2000 * (Math.random() * 10)))
                     }catch(err) {
                         console.log(err)
                     }
@@ -72,7 +74,14 @@ export default class Autofeed {
 
     formatPost(content, source) {
         let post = `${content.title}\n\n\n`
-        post += `${content.sentences.join('\n\n')}\n\n`
+
+        content.sentences.map((item, index) => {
+            if(index < (content.sentences.length - 1)) {
+                post += `${item}\n\n`
+            }
+        })
+
+        post += `\n\n`
 
         post += `Source: ${events.sites[source]}\n\n`
 
