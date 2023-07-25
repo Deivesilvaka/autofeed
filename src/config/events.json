@@ -2,7 +2,7 @@
     "events": [
         "nintendo",
         "playstation",
-        "microsoft",
+        "microsoft"
     ],
     "sites": {
         "nintendo": "Nintendo Life",
