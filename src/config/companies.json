@@ -11,7 +11,7 @@
             "refresh": 300000
         },
         {
-            "url": "http://www.nintendolife.com/feeds/news",
+            "url": " news.xbox.com/en-us/feed",
             "eventName": "microsoft",
             "refresh": 480000
         }
