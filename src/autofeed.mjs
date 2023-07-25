@@ -33,6 +33,8 @@ export default class Autofeed {
                     }
                 }
             })
+
+            feeder.on('error', console.log('Something went wrong :('))
         })
 
         setTimeout(() => {
