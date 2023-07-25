@@ -28,12 +28,11 @@ export default class Instagram {
                 caption: post
             })
             
-            await unlink(imageDest)
-            
             return post_published
 
-        }catch(err) {
+        } catch(err) {
             console.log(err)
+        } finally {
             await unlink(imageDest)
         }
 
