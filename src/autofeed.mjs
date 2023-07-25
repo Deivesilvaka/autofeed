@@ -87,7 +87,7 @@ export default class Autofeed {
 
         content.keywords.map((word, index) => {
             if (index < 15) {
-                post += `#${word} `
+                post += `#${word.replace("-", "_")} `
             }
         })
 
