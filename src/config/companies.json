@@ -3,7 +3,7 @@
         {
             "url": "http://www.nintendolife.com/feeds/news",
             "eventName": "nintendo",
-            "refresh": 300000
+            "refresh": 480000
         },
         {
             "url": "https://www.pushsquare.com/feeds/latest",
