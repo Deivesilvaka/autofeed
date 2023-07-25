@@ -1,10 +1,12 @@
 {
     "events": [
         "nintendo",
-        "playstation"
+        "playstation",
+        "microsoft",
     ],
     "sites": {
         "nintendo": "Nintendo Life",
-        "playstation": "Pushsquare"
+        "playstation": "Pushsquare",
+        "microsoft": "Microsoft"
     }
 }
