@@ -49,7 +49,7 @@ export default class Autofeed {
 
     async publishContent(content, source) {
         const { title, summary, link } = content
-        const imageUrl = content.enclosures[0].url ?? content.image.url
+        const imageUrl = content?.enclosures[0]?.url ?? content.image.url
 
         const cleanedSummary = this.#removeBlankLinesAndMarkDown(summary)
         const sentences = this.breakContentIntoSentences(cleanedSummary)
