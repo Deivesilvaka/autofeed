@@ -11,7 +11,7 @@
             "refresh": 300000
         },
         {
-            "url": "https://news.xbox.com/en-us/feed/",
+            "url": "https://www.purexbox.com/feeds/news/",
             "eventName": "microsoft",
             "refresh": 480000
         }
