@@ -16,7 +16,7 @@
             "refresh": 480000
         },
         {
-            "url": "http://www.nintendolife.com/feeds/news",
+            "url": "https://blog.unity.com/feed",
             "eventName": "unity",
             "refresh": 480000
         }
