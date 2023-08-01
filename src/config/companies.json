@@ -14,11 +14,6 @@
             "url": "https://www.purexbox.com/feeds/news/",
             "eventName": "microsoft",
             "refresh": 480000
-        },
-        {
-            "url": "https://blog.unity.com/feed",
-            "eventName": "unity",
-            "refresh": 480000
         }
     ]
 }

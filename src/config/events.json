@@ -8,7 +8,6 @@
     "sites": {
         "nintendo": "Nintendo Life",
         "playstation": "Pushsquare",
-        "microsoft": "Purexbox",
-        "unity": "Unity"
+        "microsoft": "Purexbox"
     }
 }
