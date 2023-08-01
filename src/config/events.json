@@ -2,11 +2,13 @@
     "events": [
         "nintendo",
         "playstation",
-        "microsoft"
+        "microsoft",
+        "unity"
     ],
     "sites": {
         "nintendo": "Nintendo Life",
         "playstation": "Pushsquare",
-        "microsoft": "Purexbox"
+        "microsoft": "Purexbox",
+        "unity": "Unity"
     }
 }
