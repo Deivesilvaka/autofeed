@@ -1,19 +1,15 @@
 {
     "portals": [
         {
-            "url": "http://www.nintendolife.com/feeds/news",
-            "eventName": "nintendo",
+            "url": "https://scitechdaily.com/news/biology/feed/",
+            "eventName": "scitechdaily",
             "refresh": 480000
         },
         {
-            "url": "https://www.pushsquare.com/feeds/latest",
-            "eventName": "playstation",
+            "url": "https://a-z-animals.com/feed/",
+            "eventName": "a-z-animals",
             "refresh": 300000
-        },
-        {
-            "url": "https://www.purexbox.com/feeds/news/",
-            "eventName": "microsoft",
-            "refresh": 480000
         }
+
     ]
 }

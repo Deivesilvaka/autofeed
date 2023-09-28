@@ -37,7 +37,7 @@ export default class Autofeed {
 
         setTimeout(() => {
             this.canStart = true
-        }, 3000)
+        }, 10000)
     }
 
     async loginInstagram() {

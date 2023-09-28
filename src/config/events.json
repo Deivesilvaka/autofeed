@@ -1,13 +1,10 @@
 {
     "events": [
-        "nintendo",
-        "playstation",
-        "microsoft",
-        "unity"
+        "scitechdaily",
+        "a-z-animals"
     ],
     "sites": {
-        "nintendo": "Nintendo Life",
-        "playstation": "Pushsquare",
-        "microsoft": "Purexbox"
+        "scitechdaily": "Scitechdaily",
+        "a-z-animals": "A-z-animals"
     }
 }
